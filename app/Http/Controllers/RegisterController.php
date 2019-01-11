@@ -26,7 +26,7 @@ class RegisterController extends Controller
             'password'=>'required|min:5|confirmed'
         ]);
         //逻辑
-        $username = \request('name');
+        $name = \request('name');
         $email = \request('email');
         $password = bcrypt(\request('password'));
         $user = User::create(compact('name','email','password'));

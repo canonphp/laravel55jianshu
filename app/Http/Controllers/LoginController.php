@@ -29,7 +29,6 @@ class LoginController extends Controller
         $remember  = boolval(\request('is_remember'));
         if (\Auth::attempt($user,$remember)){
             return redirect('posts/');
-
         }
 
         return \Redirect::back()->withErrors("用户名密码错误");

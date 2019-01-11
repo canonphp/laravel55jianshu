@@ -21,7 +21,7 @@ class User extends Authenticatable
     //关注我的Fan模型
     public function fans()
     {
-        return $this->hasMany(Post::class,'star_id','id');
+        return $this->hasMany(Fan::class,'star_id','id');
     }
 
     //我关注的fan模型
@@ -54,10 +54,10 @@ class User extends Authenticatable
         return $this->fans()->where('fan_id',$uid)->count();
     }
 
-    //当前用户是否关注了uid
-    public function hasStar()
+    //当前用户是否关注了uids
+    public function hasStar($uid)
     {
-
+        return $this->stars()->where('star_id',$uid)->count();
     }
 
 

@@ -114,7 +114,8 @@ class PostController extends Controller
         $comment  =  new Comment();
         $comment->user_id = \Auth::user()->id;
         $comment->content = \request('content');
-        $post->comments()->save();
+        $comment->post_id = $post->id;
+        $comment->save();
         /*$user_id  = \Auth::user()->id;
         $params = array_merge(
             \request(['post_id', 'content']),

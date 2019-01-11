@@ -39,7 +39,7 @@
                     <li class="list-group-item">
                         <h5>{{$comment->created_at}} by {{$comment->user->name}}</h5>
                         <div>
-                           {{$comment->$comment}}
+                           {{$comment->content}}
                         </div>
                     </li>
                         @endforeach

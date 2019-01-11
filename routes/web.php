@@ -67,3 +67,16 @@ Route::post('/posts/{post}/comment','\App\Http\Controllers\PostController@commen
 Route::get('/posts/{post}/zan','\App\Http\Controllers\PostController@zan');
 //取消点赞
 Route::get('/posts/{post}/unzan','\App\Http\Controllers\PostController@unzan');
+
+//个人中心
+/*Route::get('/user/{user}','')*/
+Route::post('/user/{user}/fan','\App\Http\Controllers\UserController@fan');
+Route::post('/user/{user}/unfan','\App\Http\Controllers\UserController@unfan');
+
+
+
+
+//专题详情页
+Route::get('/topic/{topic}','\App\Http\Controllers\TopicController@show');
+//投稿
+Route::post('/topic/{topic}/submit','\App\Http\Controllers\TopicController@submit');
